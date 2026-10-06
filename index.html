@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071a3d"><meta name="description" content="VELMORA Data Sub — data, airtime, bills and wallet services.">
+<link rel="manifest" href="./manifest.webmanifest"><title>VELMORA Data Sub</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f6f8fc;color:#101828}header{background:#071a3d;color:#fff;padding:22px 18px}main{max-width:900px;margin:auto;padding:28px 18px}.logo{width:64px;height:64px;border-radius:16px;background:#d6a72c;display:grid;place-items:center;font-weight:900;color:#071a3d;font-size:20px;box-shadow:0 8px 25px #0003}.brand{display:flex;gap:16px;align-items:center}.brand h1{margin:0;font-size:27px}.brand p{margin:4px 0 0;opacity:.8}.card{background:#fff;border-radius:20px;padding:24px;margin:18px 0;box-shadow:0 8px 30px #071a3d12}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.item{padding:17px;border:1px solid #e5eaf2;border-radius:14px}.item b{display:block;margin-bottom:5px}.btn{display:inline-block;background:#071a3d;color:#fff;padding:13px 18px;border-radius:11px;text-decoration:none;font-weight:700;margin:6px 6px 6px 0}.btn.alt{background:#d6a72c;color:#071a3d}.muted{color:#667085}.notice{background:#fff8e1;border-left:4px solid #d6a72c;padding:13px 15px;border-radius:8px}.small{font-size:13px}
+</style></head><body>
+<header><div class="brand"><div class="logo">V</div><div><h1>VELMORA Data Sub</h1><p>Data • Airtime • Bills • Wallet</p></div></div></header>
+<main>
+<section class="card"><h2>Welcome to VELMORA</h2><p>Access the Velmora Data Sub service from your phone or computer. The application is designed for data bundles, airtime, utility payments, cable TV and wallet services.</p>
+<a class="btn alt" href="https://ais-pre-u32cedatzkjblmzlcgyisd-25552193323.europe-west2.run.app" target="_blank" rel="noopener">Open Velmora App</a>
+<button class="btn" id="install" hidden>Install App</button></section>
+<section class="card"><h2>Services</h2><div class="grid">
+<div class="item"><b>📶 Data Bundles</b><span class="muted">MTN, Airtel, Glo and 9mobile</span></div>
+<div class="item"><b>📱 Airtime</b><span class="muted">Quick airtime top-up</span></div>
+<div class="item"><b>💡 Electricity</b><span class="muted">Utility and meter services</span></div>
+<div class="item"><b>📺 Cable TV</b><span class="muted">DStv, GOtv and other supported services</span></div>
+<div class="item"><b>💳 Wallet</b><span class="muted">Fund and manage your service balance</span></div>
+<div class="item"><b>🧾 Receipts</b><span class="muted">Transaction history and receipts</span></div>
+</div></section>
+<section class="card"><h2>Customer access</h2><p class="notice">For live transactions, use the <strong>Open Velmora App</strong> button above. Payment gateway credentials and private banking details should be configured through secure server-side environment variables before accepting real customer funds.</p><p class="small muted">This GitHub Pages site is the public launch page and PWA shell. It does not expose private payment secrets.</p></section>
+</main>
+<script>
+let d; window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();d=e;document.getElementById('install').hidden=false});
+document.getElementById('install').onclick=async()=>{if(d){d.prompt();await d.userChoice;d=null}};
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script></body></html>
